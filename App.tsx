@@ -26,10 +26,15 @@ const App: React.FC = () => {
     try {
       const savedData = localStorage.getItem(STORAGE_KEY);
       if (savedData) {
-        setDataStore(JSON.parse(savedData));
+        const parsed = JSON.parse(savedData);
+        if (parsed && typeof parsed === 'object') {
+          setDataStore(parsed);
+        }
       }
     } catch (error) {
       console.error("Failed to load data", error);
+      // Optional: Clear corrupt data
+      // localStorage.removeItem(STORAGE_KEY);
     } finally {
       setIsLoaded(true);
     }
