@@ -85,16 +85,7 @@ export const ScreenFooter: React.FC = () => {
 };
 
 export const PrintFooter: React.FC = () => {
-  return (
-    <div className="mt-8 border-2 border-black bg-saaed-blue p-4 flex justify-between items-center text-black font-bold text-lg hidden print:flex print:w-full print:mt-auto">
-      <div>
-        ساعد للأنظمة المرورية
-      </div>
-      <div className="font-sans ltr" dir="ltr">
-        SAAED FOR TRAFFIC SYSTEM
-      </div>
-    </div>
-  );
+  return null;
 };
 
 // Backward compatibility default export if needed, but App.tsx will be updated
