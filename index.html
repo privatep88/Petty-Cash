@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>نظام تسجيل المصروفات - بيتي كاش</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Cairo', 'sans-serif'],
+            },
+            colors: {
+              'saaed-blue': '#B4C6E7', 
+              'saaed-dark': '#1F2937',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Print specific overrides */
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white !important;
+          -webkit-print-color-adjust: exact !important; 
+          print-color-adjust: exact !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+        /* Make inputs look like text when printing */
+        input, textarea, select {
+          border: none !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          resize: none !important;
+        }
+        /* Ensure placeholders don't show in print */
+        ::placeholder {
+            color: transparent !important;
+        }
+        /* Hide scrollbars in print */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "uuid": "https://esm.sh/uuid@^13.0.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Petty Cash System",
+  "description": "Digital replication of the Logistics Support Petty Cash recording form with Arabic RTL layout, calculation features, and print capability.",
+  "requestFramePermissions": []
+}
