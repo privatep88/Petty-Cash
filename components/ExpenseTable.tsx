@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExpenseEntry, MONTHS_AR } from '../types';
-import { Trash2, Plus, Printer, Calculator, FileStack, Calendar, ChevronDown, FileSpreadsheet, X, Sigma, NotebookPen } from 'lucide-react';
+import { Trash2, Plus, Printer, Calculator, FileStack, Calendar, ChevronDown, FileSpreadsheet, X, Sigma, NotebookPen, Save, Check } from 'lucide-react';
 
 interface ExpenseTableProps {
   entries: ExpenseEntry[];
@@ -32,6 +32,7 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
   onDeleteEntry
 }) => {
   
+  const [justSaved, setJustSaved] = useState(false);
   const totalCost = entries.reduce((sum, entry) => sum + (Number(entry.cost) || 0), 0);
 
   // Generate years from 2026 to 2050
@@ -49,6 +50,14 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
   const inputBaseClass = "w-full h-full p-2 text-center bg-transparent focus:bg-blue-50 focus:outline-none transition-colors placeholder-gray-400 print:placeholder-transparent";
   const textareaClass = `${inputBaseClass} resize-none leading-relaxed flex items-center justify-center pt-4`;
 
+  const handleSave = () => {
+    // The save is already automatic via state changes. This is purely for user feedback.
+    setJustSaved(true);
+    setTimeout(() => {
+        setJustSaved(false);
+    }, 2000); // Revert back after 2 seconds
+  };
+  
   const handleExportExcel = () => {
     // CSV Header
     const headers = [
@@ -165,6 +174,28 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
 
         {/* Buttons - Left Side (Second in DOM for RTL) */}
         <div className="flex gap-4 no-print w-full md:w-auto">
+          <button
+            onClick={handleSave}
+            disabled={justSaved}
+            className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg shadow-md transition-all active:scale-95 w-full md:w-auto ${
+              justSaved 
+                ? 'bg-green-600 text-white cursor-not-allowed' 
+                : 'bg-[#334155] text-white hover:bg-[#1e293b] hover:shadow-lg'
+            }`}
+          >
+            {justSaved ? (
+              <>
+                <Check size={20} />
+                تم الحفظ!
+              </>
+            ) : (
+              <>
+                <Save size={20} className="text-[#eab308]" />
+                حفظ التغييرات
+              </>
+            )}
+          </button>
+          
           <button
             onClick={onAddEntry}
             className="flex items-center justify-center gap-2 bg-[#334155] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#1e293b] transition-all hover:shadow-lg active:scale-95 w-full md:w-auto"
