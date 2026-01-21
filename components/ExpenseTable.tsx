@@ -177,7 +177,7 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
           <button
             onClick={handleSave}
             disabled={justSaved}
-            className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg shadow-md transition-all active:scale-95 w-full md:w-auto ${
+            className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg shadow-md transition-all active:scale-95 w-full md:w-auto text-sm ${
               justSaved 
                 ? 'bg-green-600 text-white cursor-not-allowed' 
                 : 'bg-[#334155] text-white hover:bg-[#1e293b] hover:shadow-lg'
@@ -198,7 +198,7 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
           
           <button
             onClick={onAddEntry}
-            className="flex items-center justify-center gap-2 bg-[#334155] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#1e293b] transition-all hover:shadow-lg active:scale-95 w-full md:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#334155] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#1e293b] transition-all hover:shadow-lg active:scale-95 w-full md:w-auto text-sm"
           >
             <Plus size={20} className="text-[#eab308]" />
             إضافة صف جديد
@@ -206,7 +206,7 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
           
           <button
             onClick={handleExportExcel}
-            className="flex items-center justify-center gap-2 bg-[#334155] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#1e293b] transition-all hover:shadow-lg active:scale-95 w-full md:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#334155] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#1e293b] transition-all hover:shadow-lg active:scale-95 w-full md:w-auto text-sm"
           >
             <FileSpreadsheet size={20} className="text-[#eab308]" />
             تصدير إلى Excel
@@ -214,7 +214,7 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
 
           <button
             onClick={() => window.print()}
-            className="flex items-center justify-center gap-2 bg-[#334155] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#1e293b] transition-all hover:shadow-lg active:scale-95 w-full md:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#334155] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#1e293b] transition-all hover:shadow-lg active:scale-95 w-full md:w-auto text-sm"
           >
             <Printer size={20} className="text-[#eab308]" />
             طباعة النموذج
