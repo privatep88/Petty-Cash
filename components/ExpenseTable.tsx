@@ -252,9 +252,9 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
               <th className={`${headerClass} w-[10%]`}>رقم الطلب</th>
               <th className={`${headerClass} w-[15%]`}>نوع الطلب</th>
               <th className={`${headerClass} w-[30%]`}>الموضوع</th>
-              <th className={`${headerClass} w-[12%]`}>تاريخ ( التنفيذ )</th>
+              <th className={`${headerClass} w-[16%]`}>تاريخ ( التنفيذ )</th>
               <th className={`${headerClass} w-[10%]`}>التكلفة</th>
-              <th className={`${headerClass} w-[18%]`}>الملاحظات</th>
+              <th className={`${headerClass} w-[14%]`}>الملاحظات</th>
               <th className="border-2 border-black p-2 w-[50px] no-print bg-[#334155] border-l-0 border-t-0 border-b-0">
                 <div className="flex items-center justify-center">
                     <X size={20} className="text-white" />
