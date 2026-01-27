@@ -3,16 +3,21 @@ import { v4 as uuidv4 } from 'uuid';
 import { Header } from './components/Header';
 import { ScreenFooter, PrintFooter } from './components/Footer';
 import { ExpenseTable } from './components/ExpenseTable';
-import { ExpenseEntry, PeriodData } from './types';
+import { ExpenseEntry, PeriodData, MONTHS_AR } from './types';
 import { AlertTriangle, X, Trash2 } from 'lucide-react';
 
 const INITIAL_ROWS = 4;
 const STORAGE_KEY = 'saher_petty_cash_data_v1';
 
 const App: React.FC = () => {
-  // State for Month/Year Selection
-  const [month, setMonth] = useState<string>("يناير");
-  const [year, setYear] = useState<string>("2026");
+  // Initialize State with Current Date
+  const now = new Date();
+  const currentMonthName = MONTHS_AR[now.getMonth()]; // Get Arabic month name (0-indexed)
+  const currentYearStr = now.getFullYear().toString();
+
+  // State for Month/Year Selection (Defaults to Today)
+  const [month, setMonth] = useState<string>(currentMonthName);
+  const [year, setYear] = useState<string>(currentYearStr);
 
   // State to store data for all periods. Key format: "YYYY-MonthName"
   const [dataStore, setDataStore] = useState<Record<string, PeriodData>>({});

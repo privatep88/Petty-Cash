@@ -35,8 +35,8 @@ export const ExpenseTable: React.FC<ExpenseTableProps> = ({
   const [justSaved, setJustSaved] = useState(false);
   const totalCost = entries.reduce((sum, entry) => sum + (Number(entry.cost) || 0), 0);
 
-  // Generate years from 2026 to 2050
-  const startYear = 2026;
+  // Generate years from 2024 to 2050
+  const startYear = 2024;
   const endYear = 2050;
   const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => (startYear + i).toString());
 
