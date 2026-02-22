@@ -29,12 +29,15 @@ export const ScreenFooter: React.FC = () => {
                          </h3>
                     </div>
                     <ul className="space-y-2">
-                        {['الرئيسية', 'خدماتنا', 'تواصل معنا'].map((link) => (
-                            <li key={link} className="flex items-center gap-2 text-gray-400 hover:text-[#eab308] transition-colors cursor-pointer group text-sm">
-                                <ChevronLeft size={14} className="text-[#eab308] group-hover:-translate-x-1 transition-transform" />
-                                <span>{link}</span>
-                            </li>
-                        ))}
+                        {['الرئيسية', 'خدماتنا', 'تواصل معنا'].map((link) => {
+                            const isContact = link === 'تواصل معنا';
+                            return (
+                                <li key={link} className={`flex items-center gap-2 text-gray-400 text-sm ${isContact ? '' : 'hover:text-[#eab308] transition-colors cursor-pointer group'}`}>
+                                    <ChevronLeft size={14} className={`text-[#eab308] ${isContact ? '' : 'group-hover:-translate-x-1 transition-transform'}`} />
+                                    <span>{link}</span>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
 
