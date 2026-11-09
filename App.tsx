@@ -160,13 +160,13 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col print:bg-white print:block relative">
+    <div className="min-h-screen bg-[#e9f0f7] flex flex-col print:bg-white print:block relative">
       
-      {/* Header spanning full width - Independent Date Widget */}
+      {/* Header spanning full width - Independent Date Widget + Hero Banner */}
       <Header />
 
-      <div className="flex-1 w-full p-4 md:p-8 print:p-0">
-        <div className="max-w-[1100px] mx-auto bg-white px-6 pt-6 pb-2 shadow-xl flex flex-col justify-between print:shadow-none print:w-full print:min-h-[29.7cm] print:p-0 print:m-0">
+      <main className="flex-1 w-full px-3 py-4 md:px-6 md:py-5 print:p-0">
+        <div className="max-w-[1400px] mx-auto bg-[#f6f9fc] rounded-2xl border border-white shadow-lg px-4 md:px-6 pt-5 pb-4 flex flex-col justify-between print:shadow-none print:rounded-none print:border-0 print:w-full print:min-h-[29.7cm] print:p-0 print:m-0">
           
           {/* Paper Content */}
           <div className="flex flex-col flex-1">
@@ -191,7 +191,7 @@ const App: React.FC = () => {
 
         </div>
         
-      </div>
+      </main>
 
       {/* Footer for Screen Only - Full width outside paper */}
       <ScreenFooter />

@@ -1,1 +1,55 @@
-/* Base styling */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+  --font-cairo: 'Cairo', sans-serif;
+  --color-saaed-blue: #B4C6E7;
+  --color-saaed-dark: #1F2937;
+}
+
+@layer base {
+  body {
+    font-family: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+    background-color: #eef3f8;
+    color: #0f172a;
+  }
+}
+
+/* Custom styling for date input to look clean while keeping native picker accessible */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Print specific overrides */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    background-color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  input, textarea, select {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    resize: none !important;
+  }
+  ::placeholder {
+    color: transparent !important;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
